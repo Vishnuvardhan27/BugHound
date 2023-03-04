@@ -1,26 +1,27 @@
 import './App.css';
 import CreateBug from './CreateBug';
-import { BrowserRouter as Route,Routes } from 'react-router-dom';
+import { BrowserRouter as  Route, Routes } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-function App(history) {
+function App() {
   const navigate = useNavigate();
-  const handleOnClick = () => navigate('/createBug');
+
+  const handleOnClick = () => {
+    navigate('/createBug');
+  };
+
   return (
     <div className="App">
-        <Routes>
-          <Route path="/createBug" element={<CreateBug/>}/>
-          </Routes>
-      <header className="App-header">
-        <p>
-          BUGHOUND
-        </p>
-           <Button variant="contained" onClick={handleOnClick()}>Create a bug</Button>
-      </header>
-        
+        <header className="App-header">
+          <p>BUGHOUND</p>
+          <Button variant="contained" onClick={handleOnClick}>
+            Create a bug
+          </Button>
+        </header>
     </div>
   );
 }
 
 export default App;
+
