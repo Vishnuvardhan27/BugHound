@@ -1,0 +1,77 @@
+.formBox {
+    background-color: #282c34;
+    color: white;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    height: 100vh;
+    margin: 0vw;
+    padding: 5vw;
+    position: relative;
+    display: grid;
+}
+
+.buttons {
+    background-color: #282c34;
+    color: white;
+    justify-content: center;
+    display: flex;
+}
+
+.body {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-around;
+    font-size: 33px;
+}
+
+.inputButtons {
+    height: 30%;
+    width: 400px;
+    padding: 0;
+    border: 0;
+}
+
+.back {
+    height: 20px;
+    width: 30px;
+    font-size: 17px !important;
+    color: crimson !important;
+}
+
+.createbutton {
+    position: relative;
+    bottom: 90px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 2px;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-50 {
+    flex: 0 50%;
+}
+
+.max-width {
+    width: 100%;
+}
+
+.inputSpace {
+    position: relative;
+    margin-left: 20%;
+}

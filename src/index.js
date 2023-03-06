@@ -11,9 +11,10 @@ root.render(
   <Router>
     <Routes>
           <Route path="/createBug" element={<CreateBug/>} />
+          <Route path="/" element={<App/>} />
         </Routes>
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
   </React.StrictMode>
   </Router>
 );

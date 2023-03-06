@@ -13,12 +13,12 @@ function App() {
 
   return (
     <div className="App">
-        <header className="App-header">
+        <p className="App-header">
           <p>BUGHOUND</p>
           <Button variant="contained" onClick={handleOnClick}>
             Create a bug
           </Button>
-        </header>
+        </p>
     </div>
   );
 }
