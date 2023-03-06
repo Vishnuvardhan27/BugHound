@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom/client';
 function CreateBug() {
     const [newBugDescription,setNewBugDescription] = useState("");
     const [newProgram,setNewProgram] = useState("");
+    const [newProblem,setNewProblem] = useState("");
     const [reporttype, setreporttype] = useState(["Coding Error", "Design Issue", "Suggestion", "Documentation", "Hardware", "Query"]);
     const [severity, setSeverity] = useState(["Blocker","Critical","Major","Minor"]);
     const [reported, setReported] = useState(["Mike","Namrata","Vishnu","Tharni"]);
@@ -16,13 +17,14 @@ function CreateBug() {
     const [priority, setPriority] = useState(["High","Moderate","Low"]);
     const [resolved, setResolved] = useState(["Vishnu","Tharni","Namrata"]);
     const [testedBy, setTestedBy] = useState(["Vishnu","Tharni","Namrata"]);
-
     const [comments,setComments] = useState([""]);
-    const [newProblem,setNewProblem] = useState("");
+    const [newResolution,setNewResolution] = useState("");
+    const [newResolution_v,setNewResolution_v] = useState("");
     const [newSuggested, setNewSuggested] = useState("");
     const [newReportedDate, setNewReportedDate] = useState("");
     const [newResolvedDate, setNewResolvedDate] = useState("");
-    const [newTestDate, setNewTestDate] = useState("")
+    const [newTestDate, setNewTestDate] = useState("");
+    const [newDeferred,setNewDeferred] = useState("");
 
 
 
@@ -79,14 +81,14 @@ function CreateBug() {
     <div className="flex flex-row max-width">
           <div className="flex-50 max-width">
             <div>
-              <label>Program</label>
+              <label>Problem</label>
             </div>
             <div>
               <input
                 className="inputButtons"
                 type="text"
-                value={newProgram}
-                onChange={(e) => setNewProgram(e.target.value)}
+                value={newProblem}
+                onChange={(e) => setNewProblem(e.target.value)}
               />
             </div>
           </div>
@@ -125,6 +127,64 @@ function CreateBug() {
             </div>
           </div>
         </div> */}
+        <div className="flex flex-row max-width">
+          <div className="flex-50 max-width">
+            <div>
+              <label>Resolution</label>
+            </div>
+            <div>
+              <input
+                className="inputButtons"
+                type="text"
+                value={newResolution}
+                onChange={(e) => setNewResolution(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className=" inputSpace flex-50 max-width">
+            <div>
+              <label>Resolution Version</label>
+            </div>
+            <div>
+              <input
+                className="inputButtons"
+                type="text"
+                value={newResolution_v}
+                onChange={(e) => setNewResolution_v(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row max-width">
+          <div className="flex-50 max-width">
+            <div>
+              <label>Program</label>
+            </div>
+            <div>
+              <input
+                className="inputButtons"
+                type="text"
+                value={newProgram}
+                onChange={(e) => setNewProgram(e.target.value)}
+              />
+            </div>
+          </div>
+          <div className=" inputSpace flex-50 max-width">
+            <div>
+              <label>Treated as Deferred</label>
+            </div>
+            <div>
+              <input
+                className="inputButtons"
+                type="text"
+                value={newDeferred}
+                onChange={(e) => setNewDeferred(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+
+
        
 
         <div className="flex flex-row max-width">
@@ -256,7 +316,7 @@ function CreateBug() {
         <div className="flex flex-row max-width">
           <div className="flex-50 max-width">
             <div>
-              <label>Assigned By</label>
+              <label>Assigned To</label>
             </div>
             <div>
               <select
