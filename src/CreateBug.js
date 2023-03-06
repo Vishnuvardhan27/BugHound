@@ -12,7 +12,7 @@ function CreateBug() {
     const [reported, setReported] = useState(["Mike","Namrata","Vishnu","Tharni"]);
     const [area, setArea] = useState(["Login Module","Landing Page","Static Page","Api Issues"]);
     const [assigned, setAssigned] = useState(["Sangeetha","Namrata","Tharni","Vishnu"]);
-    const [stat, setStat] = useState(["Open","Closed","In progress"]);
+    const [stat, setStat] = useState(["Open","Closed","In progress", "Deferred"]);
     const [testBy, setTestBy] = useState(["Vishnu","Tharni","Namrata"]);
     const [comments,setComments] = useState([""])
     const [newProblem,setNewProblem] = useState("");
