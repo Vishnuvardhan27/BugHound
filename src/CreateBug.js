@@ -13,16 +13,28 @@ function CreateBug() {
     const [area, setArea] = useState(["Login Module","Landing Page","Static Page","Api Issues"]);
     const [assigned, setAssigned] = useState(["Sangeetha","Namrata","Tharni","Vishnu"]);
     const [stat, setStat] = useState(["Open","Closed","In progress", "Deferred"]);
-    const [testBy, setTestBy] = useState(["Vishnu","Tharni","Namrata"]);
-    const [comments,setComments] = useState([""])
+    const [priority, setPriority] = useState(["High","Moderate","Low"]);
+    const [resolved, setResolved] = useState(["Vishnu","Tharni","Namrata"]);
+    const [testedBy, setTestedBy] = useState(["Vishnu","Tharni","Namrata"]);
+
+    const [comments,setComments] = useState([""]);
     const [newProblem,setNewProblem] = useState("");
-    const [newSuggested, setNewSuggested] = useState("")
-    const [newDate, setNewDate] = useState("")
+    const [newSuggested, setNewSuggested] = useState("");
+    const [newReportedDate, setNewReportedDate] = useState("");
+    const [newResolvedDate, setNewResolvedDate] = useState("");
+    const [newTestDate, setNewTestDate] = useState("")
 
 
-    const test = testBy.map(test=> test
+
+    const prior = priority.map(prior=> prior
       )
-      const handleTest = (e) => (testBy[e.target.value])
+      const handlePriority = (e) => (prior[e.target.value])
+
+    const test = testedBy.map(test=> test
+      )
+      const handleTest = (e) => (test[e.target.value])
+
+      
     
     const assign = assigned.map(assign => assign
       )
@@ -37,6 +49,12 @@ function CreateBug() {
     const reportedBy = reported.map(reportedBy => reportedBy
       )
       const handleReportedBy = (e) => (reported[e.target.value])
+
+    const resolvedBy = resolved.map(resolvedBy => resolvedBy
+      )
+      const handleResolvedBy = (e) => (resolved[e.target.value])
+
+      
 
     const Add = reporttype.map(Add => Add
       )
@@ -142,21 +160,40 @@ function CreateBug() {
         </div>
 
         <div className="flex flex-row max-width">
-          <div className="flex-50 max-width">
+        <div className="flex-50 max-width">
             <div>
-              <label>Suggested Fix</label>
+              <label>Resolved By</label>
+            </div>
+            <div>
+              <select
+                onChange={(e) => handleResolvedBy(e)}
+                className="inputButtons"
+              >
+                {resolvedBy.map((address, key) => (
+                  <option value={key}>{address}</option>
+                ))}
+              </select>
+            </div>
+          </div>        
+
+          <div className="inputSpace flex-50 max-width">
+            <div>
+              <label>Date</label>
             </div>
             <div>
               <input
                 className="inputButtons"
                 type="text"
-                value={newSuggested}
-                onChange={(e) => setNewSuggested(e.target.value)}
+                value={newResolvedDate}
+                onChange={(e) => setNewResolvedDate(e.target.value)}
               />
             </div>
           </div>
+        </div>          
 
-          <div className=" inputSpace flex-50 max-width">
+
+      <div className="flex flex-row max-width">
+        <div className="flex-50 max-width">
             <div>
               <label>Reported By</label>
             </div>
@@ -170,11 +207,9 @@ function CreateBug() {
                 ))}
               </select>
             </div>
-          </div>
-        </div>
+          </div>        
 
-        <div className="flex flex-row max-width">
-          <div className="flex-50 max-width">
+          <div className="inputSpace flex-50 max-width">
             <div>
               <label>Date</label>
             </div>
@@ -182,8 +217,24 @@ function CreateBug() {
               <input
                 className="inputButtons"
                 type="text"
-                value={newDate}
-                onChange={(e) => setNewDate(e.target.value)}
+                value={newReportedDate}
+                onChange={(e) => setNewReportedDate(e.target.value)}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-row max-width">
+        <div className="flex-50 max-width">
+            <div>
+              <label>Suggested Fix</label>
+            </div>
+            <div>
+              <input
+                className="inputButtons"
+                type="text"
+                value={newSuggested}
+                onChange={(e) => setNewSuggested(e.target.value)}
               />
             </div>
           </div>
@@ -253,6 +304,20 @@ function CreateBug() {
 
           <div className="inputSpace flex-50 max-width">
             <div>
+              <label>Priority</label>
+            </div>
+            <div>
+              <select onChange={(e) => handlePriority(e)} className="inputButtons">
+                {prior.map((address, key) => (
+                  <option value={key}>{address}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row max-width">
+        <div className=" flex-50 max-width">
+            <div>
               <label>Tested By</label>
             </div>
             <div>
@@ -261,6 +326,19 @@ function CreateBug() {
                   <option value={key}>{address}</option>
                 ))}
               </select>
+            </div>
+          </div>
+          <div className="inputSpace flex-50 max-width">
+            <div>
+              <label>Date</label>
+            </div>
+            <div>
+              <input
+                className="inputButtons"
+                type="text"
+                value={newTestDate}
+                onChange={(e) => setNewTestDate(e.target.value)}
+              />
             </div>
           </div>
         </div>
