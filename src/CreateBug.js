@@ -397,7 +397,7 @@ function CreateBug() {
               label="Resolved By"
               onChange={handleResolvedByChange}
               size="small"
-              style={{ width: "100%" }}
+              style={{ width: "100%",height: "80px" }}
             >
               <MenuItem value={"High"}>High</MenuItem>
               <MenuItem value={"Medium"}>Medium</MenuItem>
@@ -422,7 +422,7 @@ function CreateBug() {
             label="tested By"
             onChange={handleTestedByChange}
             size="small"
-            style={{ width: "100%" }}
+            style={{ width: "100%",height: "80px" }}
           >
             <MenuItem value={"High"}>High</MenuItem>
             <MenuItem value={"Medium"}>Medium</MenuItem>
