@@ -25,13 +25,23 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.app-header-search {
+  width: 50%;
+  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+}
+.create-bug-button{
+  width:200px !important; 
+  margin-right: 10px;
 }
 
 .App-link {
