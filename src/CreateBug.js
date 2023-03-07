@@ -138,10 +138,11 @@ function CreateBug() {
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <h1> New Bug Report Entry Page</h1>
+      <h1 style={{    display: "flex",justifyContent: "center"}}> New Bug Report Entry Page</h1>
         <div className="createbugform">
           <FormControl fullWidth>
             <div className="row1">
+              <label>program</label>
             <Select
               labelId="program"
               className="program-select"
@@ -150,7 +151,7 @@ function CreateBug() {
               label="Program"
               onChange={handleProgramChange}
               size="small"
-              style={{ width: "30%" }}
+              style={{ width: "25%" }}
             >
               <InputLabel>Program</InputLabel>
               <MenuItem value={"Coding Error"}>Coding Error</MenuItem>
@@ -160,6 +161,7 @@ function CreateBug() {
               <MenuItem value={"Hardware"}>Hardware</MenuItem>
               <MenuItem value={"Query"}>Query</MenuItem>
             </Select>
+            <label>Report Type</label>
             <Select
               labelId="Report Type"
               className="report-type-select"
@@ -168,7 +170,7 @@ function CreateBug() {
               label="Report Type"
               onChange={handleReportTypeChange}
               size="small"
-              style={{ width: "30%" }}
+              style={{ width: "25%" }}
             >
               <MenuItem value={"Coding Error"}>Coding Error</MenuItem>
               <MenuItem value={"Design Issue"}>Design Issue</MenuItem>
@@ -177,6 +179,7 @@ function CreateBug() {
               <MenuItem value={"Hardware"}>Hardware</MenuItem>
               <MenuItem value={"Query"}>Query</MenuItem>
             </Select>
+            <label>Severity</label>
             <Select
               labelId="Severity"
               id="severity-select"
@@ -184,13 +187,13 @@ function CreateBug() {
               label="Severity"
               onChange={handleSeverityChange}
               size="small"
-              style={{ width: "30%" }}
+              style={{ width: "25%" }}
             >
               <MenuItem value={"Minor"}>Minor</MenuItem>
               <MenuItem value={"Major"}>Major</MenuItem>
               <MenuItem value={"Serious"}>Serious</MenuItem>
             </Select>
-            </div>
+          </div>
             <div className="problem-summary-textfeild">
             <TextField
               required
@@ -229,7 +232,9 @@ function CreateBug() {
               style={{ width: "100%" }}
             />
             </div>
-            <div>
+            <label>Reported By</label>
+            <div className="reportanddate">
+            
             <Select
               labelId="Reported By"
               className="reported-by-select"
@@ -247,7 +252,8 @@ function CreateBug() {
               <MenuItem value={"Hardware"}>Hardware</MenuItem>
               <MenuItem value={"Query"}>Query</MenuItem>
             </Select>
-            <DatePicker
+            <div className="date">
+            <DatePicker 
               label="Reported Date"
               value={reportedDate}
               onChange={(newValue) => {
@@ -257,8 +263,11 @@ function CreateBug() {
               style={{ width: "30%" }}
             />
             </div>
+          </div>
             <div className="row2">
-            <Select
+            <div className="funcArea">
+          <label>Functional Area</label>
+          <Select
               labelId="Functional Area"
               className="functional-area-select"
               id="functional-area-select"
@@ -266,7 +275,7 @@ function CreateBug() {
               label="Functional Area"
               onChange={handleFunctionalAreaChange}
               size="small"
-              style={{ width: "30%" }}
+              style={{ width: "100%" }}
             >
               <MenuItem value={"Coding Error"}>Coding Error</MenuItem>
               <MenuItem value={"Design Issue"}>Design Issue</MenuItem>
@@ -275,6 +284,12 @@ function CreateBug() {
               <MenuItem value={"Hardware"}>Hardware</MenuItem>
               <MenuItem value={"Query"}>Query</MenuItem>
             </Select>
+
+            </div>
+            
+            <div  className="assignedTo">
+            <label >Assigned To</label>
+
             <Select
               labelId="Assigned To"
               className="assigned-to-select"
@@ -283,7 +298,7 @@ function CreateBug() {
               label="Assigned To"
               onChange={handleAssignedToChange}
               size="small"
-              style={{ width: "30%" }}
+              style={{width: "100%"}}
             >
               <MenuItem value={"Coding Error"}>Coding Error</MenuItem>
               <MenuItem value={"Design Issue"}>Design Issue</MenuItem>
@@ -293,7 +308,9 @@ function CreateBug() {
               <MenuItem value={"Query"}>Query</MenuItem>
             </Select>
             </div>
+            </div>
             <TextField
+            style={{marginBottom:'10px'}}
               placeholder="Comments"
               multiline
               rows={2}
@@ -302,7 +319,10 @@ function CreateBug() {
                 setComments(event.target.value);
               }}
             />
+            
             <div className="row3">
+            <div style={{display: "flex",flexDirection: "column", width:'23%'}}>
+              <label>Status</label>
             <Select
               labelId="Status"
               className="status-select"
@@ -311,12 +331,14 @@ function CreateBug() {
               label="Status"
               onChange={handleStatusChange}
               size="small"
-              style={{ width: "15%" }}
             >
               <MenuItem value={"Open"}>Open</MenuItem>
               <MenuItem value={"Close"}>Close</MenuItem>
               <MenuItem value={"Blocked"}>Blocked</MenuItem>
             </Select>
+            </div>
+            <div style={{display: "flex",flexDirection: "column", width:'23%'}}>
+            <label>Priority</label>
             <Select
               labelId="Priority"
               className="priority-select"
@@ -325,12 +347,14 @@ function CreateBug() {
               label="{Priority"
               onChange={handlePriorityChange}
               size="small"
-              style={{ width: "25%" }}
             >
               <MenuItem value={"High"}>High</MenuItem>
               <MenuItem value={"Medium"}>Medium</MenuItem>
               <MenuItem value={"Low"}>Low</MenuItem>
             </Select>
+            </div>
+            <div style={{display: "flex",flexDirection: "column", width:'23%'}}>
+            <label>Resolution</label>
             <Select
               labelId="Resolution"
               className="resolution-select"
@@ -339,12 +363,14 @@ function CreateBug() {
               label="{Resolution"
               onChange={handleResolutionChange}
               size="small"
-              style={{ width: "30%" }}
             >
               <MenuItem value={"High"}>High</MenuItem>
               <MenuItem value={"Medium"}>Medium</MenuItem>
               <MenuItem value={"Low"}>Low</MenuItem>
             </Select>
+            </div>
+            <div style={{display: "flex",flexDirection: "column", width:'23%'}}>
+            <label>Resolution-verison</label>
             <Select
               labelId="Resolution-verison"
               className="resolution-version-select"
@@ -353,14 +379,16 @@ function CreateBug() {
               label="Resolution Version"
               onChange={handleResolutionVersionChange}
               size="small"
-              style={{ width: "30%" }}
             >
               <MenuItem value={"High"}>High</MenuItem>
               <MenuItem value={"Medium"}>Medium</MenuItem>
               <MenuItem value={"Low"}>Low</MenuItem>
             </Select>
             </div>
+            </div>
+            
             <div className="row4">
+            <div style={{display: "flex",flexDirection: "column", width:'23%'}}><label>Resolved By</label>
             <Select
               labelId="Resolved By"
               className="resolved-by-select"
@@ -369,21 +397,23 @@ function CreateBug() {
               label="Resolved By"
               onChange={handleResolvedByChange}
               size="small"
-              style={{ width: "20%" }}
+              style={{ width: "100%" }}
             >
               <MenuItem value={"High"}>High</MenuItem>
               <MenuItem value={"Medium"}>Medium</MenuItem>
               <MenuItem value={"Low"}>Low</MenuItem>
             </Select>
-          
+            </div>
           <DatePicker
             label="Resolved Date"
+            className="dateRT"
             value={resolvedDate}
             onChange={(newValue) => {
               setResolvedDate(newValue);
             }}
             inputFormat="dd-MM-yyyy"
           />
+          <div style={{display: "flex",flexDirection: "column", width:'23%'}}><label>Tested By</label>
           <Select
             labelId="Tested By"
             className="tested-by-select"
@@ -392,25 +422,27 @@ function CreateBug() {
             label="tested By"
             onChange={handleTestedByChange}
             size="small"
-            style={{ width: "20%" }}
+            style={{ width: "100%" }}
           >
             <MenuItem value={"High"}>High</MenuItem>
             <MenuItem value={"Medium"}>Medium</MenuItem>
             <MenuItem value={"Low"}>Low</MenuItem>
           </Select>
+          </div>
           <DatePicker
             label="Tested Date"
+            className="dateRT"
             value={testedDate}
             onChange={(newValue) => {
               setTestedDate(newValue);
             }}
             inputFormat="dd-MM-yyyy"
           />
-          <input type="checkbox" value={treatedAsDeferred} onChange={handleTreatedAsDeferredChange} lable ="Treated as Deferred" />Treated as Deferred
           </div>
-        <Button variant="contained" onClick={handleCreateBug}>
-          Create Bug
-        </Button>
+          <div className="checkbox"><input type="checkbox" value={treatedAsDeferred} onChange={handleTreatedAsDeferredChange} lable ="Treated as Deferred" /><span>Treated as Deferred</span></div>
+        <div className="submitType"><Button  variant="contained" onClick={handleCreateBug}>Create Bug</Button></div>
+          
+        
 
         </FormControl>
         </div>

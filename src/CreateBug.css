@@ -76,39 +76,101 @@
     margin-left: 20%;
 }
 
-.row1{
+.row1 {
     margin-bottom: 10px;
     justify-content: space-between !important;
     display: flex;
 }
-.row2{
+
+.row2 {
     margin-bottom: 10px;
-    justify-content: left !important;
     display: flex !important;
     flex-direction: row;
+    width: 100%;
+
 }
-.row3{
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.submitType {
+    height: 50px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.row3 {
     margin-bottom: 10px;
-    justify-content: left !important;
+    justify-content: space-between;
     display: flex !important;
     flex-direction: row;
 }
 
 
-.createbugform{
+.createbugform {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin: 20px 20px 20px 20px;
 }
+
 
 .MuiInputLabel-root {
     color: black !important;
 }
 
-.problem-summary-textfeild, .problem-description-textfeild, .suggested-fix-textfeild{
+.problem-summary-textfeild,
+.problem-description-textfeild,
+.suggested-fix-textfeild {
     margin-bottom: 10px;
 }
+
 /* .reproducible-checkbox{
     padding-left: 8px;
 } */
+.program-select,
+.report-type-select,
+.severity-select {
+    background-color: white;
+    color: black;
+}
+
+.reportanddate {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.date {
+    margin-left: 20px;
+}
+
+
+
+.assignedTo {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.funcArea {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.row4 {
+    justify-content: space-between;
+    display: flex;
+    height: 75px;
+}
+
+.dateRT {
+    top: 21px;
+}
