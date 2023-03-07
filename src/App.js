@@ -12,7 +12,7 @@ import { useTableSearch } from "./useTableSearch";
 const { Search } = Input;
 
 const fetchUsers = async () => {
-  const { data } = await axios.get("http://localhost:3005/bugs");
+  const { data } = await axios.get("http://localhost:3005/bugs",{ crossDomain: true });
   return { data };
 };
 
@@ -42,12 +42,11 @@ function App() {
         </Button>
       </p>
         <Search
-          onChange={(e) => setSearchVal(e.target.value)}
+          onChange={(e) => setSearchVal(e.target.value)}  
           placeholder="Search"
           enterButton
           style={{ position: "sticky", top: "0", left: "0" }}
         />
-
       </p>
       <>
         <br /> <br />

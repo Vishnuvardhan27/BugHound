@@ -5,7 +5,7 @@ export const userColumns = [
       key: "bug_id"
     },
     {
-      title: "Program Summary",
+      title: "Problem Summary",
       dataIndex: "problem_summary",
       key: "problem_summary"
     },

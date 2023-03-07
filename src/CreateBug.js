@@ -70,7 +70,6 @@ function CreateBug() {
   }
 
   function handleReproducibleChange(e) {
-    console.log(e)
     setReproducible(e.target.Checked);
   }
 
@@ -98,6 +97,7 @@ function CreateBug() {
 
     // Construct the data object with the form values
     const data = {
+      program:program,
       problem: problem,
       problemSummary: problemSummary,
       severity: severity,
@@ -115,7 +115,6 @@ function CreateBug() {
       resolution: resolution,
       resolutionVersion: resolutionVersion,
       resolvedBy: resolvedBy,
-      resolvedDate: resolvedDate,
       testedDate: testedDate,
       testedBy: testedBy,
       treatedAsDeferred:treatedAsDeferred ? true : false
@@ -126,7 +125,7 @@ function CreateBug() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    })
+    },{ mode: 'cors' })
       .then((response) => response.json())
       .then((data) => {
         console.log("Bug created successfully:", data);
