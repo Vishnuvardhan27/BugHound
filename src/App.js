@@ -1,5 +1,5 @@
 import "./App.css";
-import CreateBug from "./CreateBug";
+import CreateBug from "./CreateBug1";
 import { BrowserRouter as Route, Routes } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
