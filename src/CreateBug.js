@@ -9,12 +9,10 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
-import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-
 
 function CreateBug() {
   const [problem, setProblem] = useState("");
@@ -72,6 +70,7 @@ function CreateBug() {
   }
 
   function handleReproducibleChange(e) {
+    console.log(e)
     setReproducible(e.target.Checked);
   }
 
@@ -204,16 +203,7 @@ function CreateBug() {
               style={{ width: "80%" }}
               defaultValue=""
             />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={reproducible}
-                  onChange={handleReproducibleChange}
-                  name="Reproducible"
-                />
-              }
-              label="Reproducible"
-            />
+            <input type="checkbox" value={reproducible} onChange={handleReproducibleChange} lable ="Reproducible" />Reproducible
             </div> 
             <div className ="problem-description-textfeild">
             <TextField
@@ -416,17 +406,7 @@ function CreateBug() {
             }}
             inputFormat="dd-MM-yyyy"
           />
-          
-          <FormControlLabel
-              control={
-                <Checkbox
-                  checked={treatedAsDeferred}
-                  onChange={handleTreatedAsDeferredChange}
-                  name="Treated as Deferred"
-                />
-              }
-              label="Treated as Deferred"
-            />
+          <input type="checkbox" value={treatedAsDeferred} onChange={handleTreatedAsDeferredChange} lable ="Treated as Deferred" />Treated as Deferred
           </div>
         <Button variant="contained" onClick={handleCreateBug}>
           Create Bug
