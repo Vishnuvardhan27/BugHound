@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as  Router,Routes,Route } from 'react-router-dom';
 import CreateBug from './CreateBug';
+import UpdateBug from './UpdateBug';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -12,7 +13,8 @@ root.render(
     <Routes>
           <Route path="/createBug" element={<CreateBug/>} />
           <Route path="/" element={<App/>} />
-        </Routes>
+          <Route path="/updateBug/:id" element={<UpdateBug/>}/>
+    </Routes>
   <React.StrictMode>
     {/* <App /> */}
   </React.StrictMode>

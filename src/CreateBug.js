@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./CreateBug.css";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function CreateBug() {
+  
   const [problem, setProblem] = useState("");
   const [problemSummary, setProblemSummary] = useState("");
   const [severity, setSeverity] = useState("");

@@ -1,9 +1,5 @@
 import axios from "axios";
-
-const handleDeletebug = async (record) => {
-  const { data } = await axios.delete(`http://localhost:3005/bugs/${record.bug_id}`,{ crossDomain: true });
-  return { data };
-};
+import { useNavigate,Link } from "react-router-dom";
 
 export const userColumns = [
     {
@@ -41,7 +37,13 @@ export const userColumns = [
       dataIndex: "update",
       key: "update",
       render: (text, record) => (
-        <button onClick={handleDeletebug(record)}>
+        <button onClick={()=>{
+          console.log(record)
+          const navigate = useNavigate();
+           navigate("/updateBug",{record})
+           debugger
+          // <Link to="/updateBug/"state={{ bug: record }} />
+        }}>
           {"Update"}
         </button>
        ),
@@ -51,7 +53,10 @@ export const userColumns = [
       dataIndex: "delete",
       key: "Delete",
       render: (text, record) => (
-        <button onClick={handleDeletebug(record)}>
+        <button onClick={()=>{
+          console.log(record)
+          axios.delete(`http://localhost:3005/bugs/${record.bug_id}`,{ crossDomain: true });
+        }}>
           {"Delete"}
         </button>
        ),
