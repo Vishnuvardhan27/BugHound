@@ -9,6 +9,7 @@ import axios from "axios";
 import { userColumns } from "./columns";
 import { useTableSearch } from "./useTableSearch";
 
+
 const { Search } = Input;
 
 const fetchUsers = async () => {

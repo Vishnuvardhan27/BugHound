@@ -1,3 +1,10 @@
+import axios from "axios";
+
+const handleDeletebug = async (record) => {
+  const { data } = await axios.delete(`http://localhost:3005/bugs/${record.bug_id}`,{ crossDomain: true });
+  return { data };
+};
+
 export const userColumns = [
     {
       title: "Bug ID",
@@ -28,6 +35,26 @@ export const userColumns = [
       title: "Status",
       dataIndex: "status",
       key: "status"
+    },
+    {
+      title: "Update",
+      dataIndex: "update",
+      key: "update",
+      render: (text, record) => (
+        <button onClick={handleDeletebug(record)}>
+          {"Update"}
+        </button>
+       ),
+    },
+    {
+      title: "Delete",
+      dataIndex: "delete",
+      key: "Delete",
+      render: (text, record) => (
+        <button onClick={handleDeletebug(record)}>
+          {"Delete"}
+        </button>
+       ),
     }
   ];
   
