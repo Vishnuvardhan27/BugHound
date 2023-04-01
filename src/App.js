@@ -84,7 +84,7 @@ function App() {
   };
 
   const handleLogout = () => {
-    navigate("/login");
+    navigate("/");
   }
 
   const [searchVal, setSearchVal] = useState(null);

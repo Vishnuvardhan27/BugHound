@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./Register.css"
 
 export default class Register extends Component {
   render() {
@@ -45,7 +46,7 @@ export default class Register extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Already registered <a href="/login">sign in?</a>
+          Already registered <a href="/">sign in?</a>
         </p>
       </form>
     )

@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
+import { useNavigate } from "react-router-dom";
+import "./Login.css"
 
-export default class Login extends Component {
-  render() {
+function Login() {
+  const navigate = useNavigate();
+
+  
+    const handleLandingPage = () =>{
+      navigate("/landingPage");
+    }
     return (
       <form className='body'>
         <h1>BUGHOUND</h1>
@@ -39,7 +46,7 @@ export default class Login extends Component {
         </div>
 
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" onClick={handleLandingPage}>
             Submit
           </button>
         </div>
@@ -49,5 +56,5 @@ export default class Login extends Component {
       </form>
     )
   }
-}
 
+export default Login;

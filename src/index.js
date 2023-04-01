@@ -15,9 +15,9 @@ root.render(
   <Router>
     <Routes>
           <Route path="/createBug" element={<CreateBug/>} />
-          <Route path="/login" element={<Login/>} />
+          <Route path="/landingPage" element={<App/>} />
           <Route path="/register" element={<Register/>} />
-          <Route path="/" element={<App/>} />
+          <Route path="/" element={<Login/>} />
           <Route path="/updateBug/:id" element={<UpdateBug/>}/>
     </Routes>
   <React.StrictMode>
