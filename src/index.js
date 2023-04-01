@@ -2,15 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as  Router,Routes,Route } from 'react-router-dom';
 import CreateBug from './CreateBug';
+import Register from './Register';
+import Login from './Login';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
           <Route path="/createBug" element={<CreateBug/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
           <Route path="/" element={<App/>} />
         </Routes>
   <React.StrictMode>

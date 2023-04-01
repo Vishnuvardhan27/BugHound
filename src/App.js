@@ -23,6 +23,10 @@ function App() {
     navigate("/createBug");
   };
 
+  const handleLogout = () => {
+    navigate("/login");
+  }
+
   const [searchVal, setSearchVal] = useState(null);
 
   const { filteredData, loading } = useTableSearch({
@@ -36,20 +40,23 @@ function App() {
         <p>BUGHOUND</p>
       </p>
       <p className="app-header-search">
-      <p className="create-bug-button">
-      <Button  variant="contained" onClick={handleOnClick}>
+        <p className="create-bug-button">
+          <Button  variant="contained" onClick={handleOnClick}>
           Create a bug
-        </Button>
-      </p>
+          </Button>
+        </p>
         <Search
           onChange={(e) => setSearchVal(e.target.value)}
           placeholder="Search"
           enterButton
           style={{ position: "sticky", top: "0", left: "0" }}
         />
-
+        <Button  variant="contained" onClick={handleLogout}>
+          Logout
+        </Button>
       </p>
       <>
+      
         <br /> <br />
         <Table
           rowKey="name"
