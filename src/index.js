@@ -4,6 +4,7 @@ import { BrowserRouter as  Router,Routes,Route } from 'react-router-dom';
 import CreateBug from './CreateBug';
 import Register from './Register';
 import Login from './Login';
+import UpdateBug from './UpdateBug';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -17,7 +18,8 @@ root.render(
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/" element={<App/>} />
-        </Routes>
+          <Route path="/updateBug/:id" element={<UpdateBug/>}/>
+    </Routes>
   <React.StrictMode>
     {/* <App /> */}
   </React.StrictMode>
